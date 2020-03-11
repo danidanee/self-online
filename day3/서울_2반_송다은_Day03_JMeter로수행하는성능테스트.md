@@ -16,6 +16,10 @@
 
 <br/>
 
+<br/>
+
+<br/>
+
 2. 100 개의 쓰레드 여기서 1 쓰레드 =1 사용자 로 StartupTime:20sec, Hold Load:60sec,
    Shutdown:10sec 로 맞춘 뒤 하단 이미지 참조 아래 항목을 측정
    * TPS, 응잡시간
@@ -43,6 +47,10 @@
 <img alt="thread group" src="https://github.com/danidanee/img/blob/master/day3/Transactions%20per%20Second2.png?raw=true"/>
 
 <img alt="thread group" src="https://github.com/danidanee/img/blob/master/day3/Response%20Times%20Over%20Time2.png?raw=true"/>
+
+<br/>
+
+<br/>
 
 <br/>
 
