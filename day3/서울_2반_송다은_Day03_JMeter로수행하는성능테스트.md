@@ -20,8 +20,8 @@
 
 <br/>
 
-2. 100 개의 쓰레드 여기서 1 쓰레드 =1 사용자 로 StartupTime:20sec, Hold Load:60sec,
-   Shutdown:10sec 로 맞춘 뒤 하단 이미지 참조 아래 항목을 측정
+**2. 100 개의 쓰레드 여기서 1 쓰레드 =1 사용자 로 StartupTime:20sec, Hold Load:60sec,
+   Shutdown:10sec 로 맞춘 뒤 하단 이미지 참조 아래 항목을 측정**
    * TPS, 응잡시간
 
 <br/>
