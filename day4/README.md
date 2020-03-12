@@ -161,13 +161,72 @@ mysql               0.1                 9b51d9275906        7 days ago          
 
 <br/>
 
-<h2>에세이</h2>
+<h2>심화 과제</h2>
 
 <br/>
 
-* 도커를 처음 접하고 docker toolbox 설치부터 환경 설정까지 많은 어려움이 있었습니다.
-* 또한, 이미지 생성까지도 많은 오류가 있어서 오랜 시간이 걸렸습니다.
-* 그래서 다음에는 안 까먹을거 앞으로 잘할 수 있을 거 같습니다.
+<h4>docker-compose 파일 작성</h4>
 
+```
+version: "3"
 
+services:
+  front:
+    build: ./front-sk
+    image: front:0.1
+    ports: - 8080:8080
+
+  back:
+    build: ./back-sk
+    image: back:0.1
+    ports: - 8000:8080
+    depends_on:
+      - db
+
+  db:
+    image: mysql
+    restart: always
+    ports: - 3306:3306
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ssafyssafyroomroom
+      MYSQL_DATABASE: ssafy
+      MYSQL_USER: root
+```
+
+<br/>
+
+<h4>일괄 실행</h4>
+
+```
+docker-compose up -d
+```
+
+```
+Creating network "webmobile2-skeleton_default" with the default driver
+Pulling db (mysql:)...
+latest: Pulling from library/mysql
+Digest: sha256:4a30434ce03d2fa396d0414f075ad9ca9b0b578f14ea5685e24dcbf789450a2c
+Status: Downloaded newer image for mysql:latest
+Creating webmobile2-skeleton_front_1 ... done
+Creating webmobile2-skeleton_db_1    ... done
+Creating webmobile2-skeleton_back_1  ... done
+```
+
+<br/>
+
+<h4>생성 확인 및 삭제</h4>
+
+```
+docker-compose ps
+docker-compose down
+```
+
+```
+           Name                          Command               State                 Ports
+--------------------------------------------------------------------------------------------------------
+webmobile2-skeleton_back_1    java -jar /to-do-springboo ...   Up      0.0.0.0:8000->8080/tcp
+webmobile2-skeleton_db_1      docker-entrypoint.sh mysqld      Up      0.0.0.0:3306->3306/tcp, 33060/tcp
+webmobile2-skeleton_front_1   docker-entrypoint.sh http- ...   Up      0.0.0.0:8080->8080/tcp
+```
 
