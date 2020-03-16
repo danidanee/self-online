@@ -121,7 +121,7 @@ ADD COLUMN `입력시간` DATETIME NOT NULL DEFAULT now() AFTER `아이디`;
 
 * 결과 화면 (일부 캡쳐)
 
-<img src="https://github.com/danidanee/self-online/blob/master/day6/addr_sql.JPG?raw=true"/>
+<img src="https://github.com/danidanee/self-online/blob/master/day6/addr_mysql.JPG?raw=true"/>
 
 <br/>
 
