@@ -28,11 +28,14 @@ public class 서울_2반_송다은_블록체인구현 {
 		try {
 			MessageDigest digest = MessageDigest.getInstance("SHA-256");
 			int nonce = -1;
+			String prevhash = "";
+			if (block.size() != 0) prevhash = block.get(block.size()-1).hash;
 			
 			while (true) {
 				
 				// 해시 값 계산
-				String base = data + ++nonce;
+				String base = prevhash + data + ++nonce;
+					
 				StringBuffer hexString = new StringBuffer();
 				byte[] hash = digest.digest(base.getBytes("UTF-8"));
 				
@@ -43,14 +46,9 @@ public class 서울_2반_송다은_블록체인구현 {
 					hexString.append(hex);
 				}
 				
-				// 처음엔 그냥 저장
-				if (block.size() == 0) {
-					block.add(new Block(nonce, data, "", hexString.toString()));
-					break;
-				}
-				// 00000 일때까지 실행
-				else if(hexString.toString().substring(0,5).equals("00000")) {
-					block.add(new Block(nonce, data, block.get(block.size()-1).hash, hexString.toString()));
+				// 처음엔 그냥 저장, 00000 일때까지 실행
+				if (block.size() == 0 || hexString.toString().substring(0,5).equals("00000")) {
+					block.add(new Block(nonce, data, prevhash, hexString.toString()));
 					break;
 				}
 			}
