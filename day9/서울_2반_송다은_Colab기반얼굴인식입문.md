@@ -43,7 +43,7 @@ plt.show()
 
 <img src="https://github.com/danidanee/img/blob/master/day9/colab1.png?raw=true"/>
 
-<br/><br/><br/><br/>
+<br/><br/>
 
 * 파일에서 얼굴 추출해 list에 저장
 
@@ -77,27 +77,7 @@ for face in known_face_list:
 
 <img src="https://github.com/danidanee/img/blob/master/day9/colab2.JPG?raw=true"/>
 
-<br/><br/><br/><br/>
-
-* 
-
-```python
-# 기존리스트에 없는 새로운 파일을 열어서
-unknown_person = fr.load_image_file("/gdrive/My Drive/colab/unknown.jpg")
-
-# 얼굴좌표를 알아내서 잘라낸다
-top, right, bottom, left = fr.face_locations(unknown_person)[0]
-unknown_face = unknown_person[top:bottom, left:right]
-
-# unknown_face 이라는 타이틀을 붙여서 표시
-plt.title("unknown_face")
-plt.imshow(unknown_face)
-plt.show()
-```
-
-<img src=""/>
-
-<br/><br/><br/><br/>
+<br/><br/>
 
 * 비교 대상 얼굴 추출 및 인코딩
 
@@ -119,7 +99,7 @@ plt.show()
 
 <img src="https://github.com/danidanee/img/blob/master/day9/colab4.png?raw=true"/>
 
-<br/><br/><br/><br/>
+<br/><br/>
 
 * 이미지 비교
 
@@ -141,7 +121,7 @@ for face in known_face_list:
 
 <img src="https://github.com/danidanee/img/blob/master/day9/colab5.JPG?raw=true"/>
 
-<br/><br/><br/><br/>
+<br/><br/>
 
 <h3>후기</h3>
 
